@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ClientControleur extends Controller
 {
     public static function show() {
-        return view('client');
+        return view('client', ['clients' => \App\Models\Client::all()]);
     }
 }
