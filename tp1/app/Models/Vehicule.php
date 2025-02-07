@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicule extends Model
 {
-    use HashFactory;
     protected $primaryKey = 'Matricule';
+    protected $table = 'vehicule';
     public $timestamps = false;
     protected $fillable= [
         'Matricule',

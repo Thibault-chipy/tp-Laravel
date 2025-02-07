@@ -9,3 +9,5 @@ Route::get('/', function () {
 
 
 Route::get('/client', [ClientControleur::class, 'show']);
+
+Route::get('/test',[ClientControleur::class, 'test']);

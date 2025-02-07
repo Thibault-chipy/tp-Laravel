@@ -15,7 +15,7 @@ class ClientSeeder extends Seeder
     public function run(): void
     {
         Client::factory()->create([
-            'NumClient' => '1',
+            'NumeroClient' => '1',
             'Nom' => 'Test Client',
             'Email' => 'aaaaa@eeeee.fr',
             'carteBancaire' => '1234567890123456',
@@ -23,4 +23,5 @@ class ClientSeeder extends Seeder
 
         
     }
+    
 }

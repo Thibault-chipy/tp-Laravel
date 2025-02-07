@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
-    use HashFactory;
     protected $primaryKey = 'codeReservation';
     public $timestamps = false;
-
+    protected $table = 'reservation';
     protected $fillable= [
         'codeReservation',
         'dateReservation',
