@@ -1,16 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ClientControleur extends Controller
 {
-    public static function show() {
-        return view('client', ['clients' =>"moi"]);
-    }
 
-    public static function test() {
-        return view('test');
+    public static function app() {
+        return view('layouts.app');
+    }
+    
+    public static function index() {
+        return view('client', [
+
+
+            'clients' =>Client::all()
+        
+        
+        ]);
     }
 }
+

@@ -17,8 +17,7 @@ class Client extends Model
         'Email',
         'carteBancaire',
     ];
-
-    
+  
 
 
 }
