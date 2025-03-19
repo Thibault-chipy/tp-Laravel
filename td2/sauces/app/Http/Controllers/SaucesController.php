@@ -8,6 +8,13 @@ class SaucesController extends Controller
 {
     public function index(){
         $sauces = Sauce::all();
-        return view(sauces.index,[]);
+        return view('sauces.index',["sauces" =>$sauces]);
     }
+
+    public function show($id){
+        $sauce = Sauce::find($id);
+        
+        return view("sauces.show",['sauce'=>$sauce]);
+    }
+
 }

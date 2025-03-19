@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Sauce extends Model
 {
     use HasFactory;
+    protected $primaryKey='idSauce';
     protected $fillable = [
         "userId",
         "name",
