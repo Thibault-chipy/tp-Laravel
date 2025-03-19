@@ -8,13 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Client extends Model
 {
     use HasFactory; 
+    protected $table = 'Client'; 
+    protected $primaryKey = 'numeroclient';
     public $timestamps = false;
-    protected $table = 'client'; 
-
     protected $fillable= [
-        'NumClient',
-        'Nom',
-        'Email',
+        'nom',
+        'email',
         'carteBancaire',
     ];
   

@@ -17,7 +17,7 @@
                     {{ __('You are logged in!') }}
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('session.show', ['id' => Auth::user()->id]) }}" class="btn btn-primary">
+                    <a href="{{ route('session.show', ['numeroClient' => Auth::user()->id]) }}" class="btn btn-primary">
                         {{ __('Voir sa sessions') }}
                     </a>
                 </div>

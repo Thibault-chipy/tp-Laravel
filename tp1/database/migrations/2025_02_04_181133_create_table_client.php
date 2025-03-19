@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Client', function (Blueprint $table) {
-            $table->unsignedBigInteger('NumeroClient')->primary();
-            $table->string('Nom', 50);
-            $table->string('Email', 50)->unique();
+        Schema::create('client', function (Blueprint $table) {
+            $table->unsignedBigInteger('numeroClient')->primary();
+            $table->string('nom', 50);
+            $table->string('email', 50)->unique();
             $table->string('carteBancaire',20);
-            $table->timestamps();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Client');
+        Schema::dropIfExists('client');
     }
 };

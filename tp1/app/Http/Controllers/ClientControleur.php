@@ -12,8 +12,8 @@ class ClientControleur extends Controller
     }
     
     public static function index() {
-        return view('client', [
-            'clients' =>Client::all()
+        return view('client.index', [
+            'clients' => Client::all()
         ]);
     }
 
@@ -24,23 +24,22 @@ class ClientControleur extends Controller
     }
 
     public static function store(Request $request) {
-$request->validate([
+    
+    Client::create([
+        'numeroClient' => $request->numeroClient,
+        'nom' => $request->nom,
+        'email' => $request->email,
+        'carteBancaire' => $request->carteBancaire,
+    ]);
 
-    'nom' => 'required',
-    'prenom' => 'required',
-    'email' => 'required',
-]);
-
-    Client::create($request->all());
-
-
-    return redirect->route('client.index');
+    dd("client ajouté avec succès");
+    return redirect()->route('client.index')->with('success', 'Client ajouté avec succès.');
 
     }
 
-    public function show($id) {
-        $client = Client::where('numeroClient', $numeroClient)->firstOrFail();  
-        return route('client.show', compact('client'));
+    public function show($numeroClient) {
+        $client = Client::firstOrFail($numeroClient);  
+        return view('client.show', compact('client'));
     }
 
     public function edit($id) {
