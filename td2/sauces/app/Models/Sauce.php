@@ -27,6 +27,6 @@ class Sauce extends Model
      // Relation avec la table utilisateur
      public function utilisateur()
      {
-         return $this->belongsTo(Utilisateur::class, 'userId');
+         return $this->belongsTo(User::class, 'userId');
      }
 }

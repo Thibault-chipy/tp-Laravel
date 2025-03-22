@@ -7,7 +7,7 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="card h-100 d-flex flex-column">
                         <!-- Image avec taille fixe -->
-                        <img src="{{ asset('storage/' . $sauce->imageUrl) }}" alt="{{ $sauce->name }}" class="card-img-top" style="height: 200px; width: 100%; object-fit: cover;">
+                        <img src="{{ asset($sauce->imageUrl) }}" alt="{{ $sauce->name }}" class="card-img-top" style="height: 200px; width: 100%; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title mt-2 fw-semibold">{{ strtoupper($sauce->name) }}</h3>
                             <p class="text-muted">Heat: {{ $sauce->heat }}/10</p>

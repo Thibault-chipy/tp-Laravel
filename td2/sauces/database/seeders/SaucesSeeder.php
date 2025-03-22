@@ -16,7 +16,7 @@ class SaucesSeeder extends Seeder
     {   
         // Sauce::factory()->create();
 
-        $userIds = DB::table('users')->pluck('idUser')->toArray();
+        $userIds = DB::table('users')->pluck('id')->toArray();
 
         $sauces = [
             [
@@ -25,7 +25,7 @@ class SaucesSeeder extends Seeder
                 'manufacturer' => 'Huy Fong Foods',
                 'description' => 'Une sauce piquante thaïlandaise à base de piment, d’ail et de vinaigre.',
                 'mainPepper' => 'Piment rouge',
-                'imageUrl' => 'https://example.com/sriracha.jpg',
+                'imageUrl' => 'storage/sauces/siracha.png',
                 'heat' => 7,
                 'likes' => 15,
                 'dislikes' => 3,
@@ -38,7 +38,7 @@ class SaucesSeeder extends Seeder
                 'manufacturer' => 'McIlhenny Company',
                 'description' => 'Une sauce épicée à base de piments rouges vieillis, de vinaigre et de sel.',
                 'mainPepper' => 'Piment Tabasco',
-                'imageUrl' => 'https://example.com/tabasco.jpg',
+                'imageUrl' => 'storage/sauces/tabasco.png',
                 'heat' => 8,
                 'likes' => 22,
                 'dislikes' => 4,
@@ -51,7 +51,7 @@ class SaucesSeeder extends Seeder
                 'manufacturer' => 'Le Phare du Cap Bon',
                 'description' => 'Une sauce tunisienne épicée à base de piments rouges, d’ail et d’épices.',
                 'mainPepper' => 'Piment rouge séché',
-                'imageUrl' => 'https://example.com/harissa.jpg',
+                'imageUrl' => 'storage/sauces/harissa.png',
                 'heat' => 9,
                 'likes' => 30,
                 'dislikes' => 2,
@@ -59,25 +59,12 @@ class SaucesSeeder extends Seeder
                 'usersDisliked' => json_encode([2])
             ],
             [
-                'user_id' => 4,
-                'name' => 'Sauce Barbecue',
-                'manufacturer' => 'Heinz',
-                'description' => 'Une sauce sucrée et fumée parfaite pour les grillades.',
-                'mainPepper' => 'Paprika fumé',
-                'imageUrl' => 'https://example.com/barbecue.jpg',
-                'heat' => 3,
-                'likes' => 40,
-                'dislikes' => 5,
-                'usersLiked' => json_encode([10, 11, 12]),
-                'usersDisliked' => json_encode([])
-            ],
-            [
                 'user_id' => 5,
                 'name' => 'Wasabi',
                 'manufacturer' => 'S&B',
                 'description' => 'Une pâte verte japonaise très forte, souvent servie avec des sushis.',
                 'mainPepper' => 'Wasabi Japonais',
-                'imageUrl' => 'https://example.com/wasabi.jpg',
+                'imageUrl' => 'storage/sauces/wasabi.png',
                 'heat' => 10,
                 'likes' => 18,
                 'dislikes' => 7,
