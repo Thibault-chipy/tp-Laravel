@@ -24,11 +24,13 @@
                         <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-uppercase text-decoration-none">
                             Logout
                         </a>
+
                     @else
                         <a href="{{ route('login') }}" class="text-uppercase text-decoration-none">Login</a>
                         <a href="{{ route('register') }}" class="ms-2 ms-sm-4 text-uppercase text-decoration-none">Sign up</a>
                     @endauth
                 </div>
+
             </div>
         </nav>
     </header>

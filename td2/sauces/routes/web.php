@@ -18,3 +18,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::post("/sauces/store",[SaucesController::class, 'store'])->name("sauces.store");
+
+Route::delete("/sauces/destroy/{id}",[SaucesController::class,"destroy"])->name("sauces.destroy");
+
+Route::get("/sauces/edit/{id}",[SaucesController::class,"edit"])->name("sauces.edit");
+
+Route::put("/sauces/update/{id}",[SaucesController::class,"update"])->name("sauces.update");

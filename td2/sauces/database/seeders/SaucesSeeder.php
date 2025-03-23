@@ -16,7 +16,7 @@ class SaucesSeeder extends Seeder
     {   
         // Sauce::factory()->create();
 
-        $userIds = DB::table('users')->pluck('id')->toArray();
+        $userIds = DB::table('users')->pluck('idUser')->toArray();
 
         $sauces = [
             [
