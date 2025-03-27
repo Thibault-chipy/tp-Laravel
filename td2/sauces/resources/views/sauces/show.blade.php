@@ -41,11 +41,11 @@
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <a href="{{ route('sauces.react',[$sauce->idSauce,'like']) }}" class="btn btn-secondary">
-                                     <i class="fas fa-thumbs-up"></i> {{ $likes }}
+                                     <i class="fas fa-thumbs-up"></i> Likes : {{ $likes }}
                                 </a>
 
                                 <a href="{{ route('sauces.react',[$sauce->idSauce,'dislike']) }}" class="btn btn-secondary">
-                                    <i class="fas fa-thumbs-down"></i> {{ $dislikes }}
+                                    <i class="fas fa-thumbs-down"></i> Dislikes : {{ $dislikes }}
                                 </a>
                             </div>
                         </div>                      

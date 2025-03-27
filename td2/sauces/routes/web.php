@@ -27,3 +27,7 @@ Route::get("/sauces/edit/{id}",[SaucesController::class,"edit"])->name("sauces.e
 Route::put("/sauces/update/{id}",[SaucesController::class,"update"])->name("sauces.update");
 
 Route::get("/sauces/react/{id}/{reaction}",[ReactionController::class,"react"])->name("sauces.react");
+
+use App\Http\Controllers\SauceControllerAPI;
+
+Route::apiResource('API', SauceControllerAPI::class);
