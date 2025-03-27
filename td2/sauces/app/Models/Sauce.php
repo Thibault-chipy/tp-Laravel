@@ -29,4 +29,9 @@ class Sauce extends Model
      {
          return $this->belongsTo(User::class, 'userId');
      }
+
+     // Relation avec la table reaction
+        public function reactions(){
+            return $this->hasMany(SauceReact::class);
+        }
 }

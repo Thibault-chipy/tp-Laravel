@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaucesController;
+use App\Http\Controllers\ReactionController;
 
 Route::get('/', [SaucesController::class, 'index'])->name('sauces.index');
 
@@ -24,3 +25,5 @@ Route::delete("/sauces/destroy/{id}",[SaucesController::class,"destroy"])->name(
 Route::get("/sauces/edit/{id}",[SaucesController::class,"edit"])->name("sauces.edit");
 
 Route::put("/sauces/update/{id}",[SaucesController::class,"update"])->name("sauces.update");
+
+Route::get("/sauces/react/{id}/{reaction}",[ReactionController::class,"react"])->name("sauces.react");

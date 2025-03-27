@@ -52,5 +52,11 @@ class User extends Authenticatable
      {
          return $this->hasMany(Sauce::class, 'userId');
      }
- 
+     
+     // Relation avec la table reaction
+     public function reactions()
+{
+    return $this->hasMany(Reaction::class);
+}
+
 }

@@ -17,7 +17,20 @@ class SaucesController extends Controller
     public function show($id){
         $sauce = Sauce::find($id);
         
-        return view("sauces.show",['sauce'=>$sauce]);
+        //Verifier les réactions de l'utilisateur connecté
+        if(Auth::check()){
+            $userId = Auth::id();
+            $sauceReact = SauceReact::where('sauceId', $id)->where('idUser', $userId)->first();
+            if($sauceReact){
+                $reaction = $sauceReact->reaction;
+            }else{
+                $reaction = null;
+            }
+        }else{
+            $reaction = null;
+        }
+
+        return view("sauces.show",['sauce'=>$sauce,"likes" => SauceReact::where('sauceId', $id)->where('reaction', 'like')->count(), "dislikes" => SauceReact::where('sauceId', $id)->where('reaction', 'dislike')->count(), "reaction" => $reaction]);
     }
 
     public function create(){

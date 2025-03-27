@@ -38,6 +38,16 @@
                         <div class="mt-3">
                             <p class="text-muted
                             ">Piment principal: {{ $sauce->mainPepper }}</p>
+
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <a href="{{ route('sauces.react',[$sauce->idSauce,'like']) }}" class="btn btn-secondary">
+                                     <i class="fas fa-thumbs-up"></i> {{ $likes }}
+                                </a>
+
+                                <a href="{{ route('sauces.react',[$sauce->idSauce,'dislike']) }}" class="btn btn-secondary">
+                                    <i class="fas fa-thumbs-down"></i> {{ $dislikes }}
+                                </a>
+                            </div>
                         </div>                      
                              <div class="text-center mt-4">
                             <a href="{{ route('sauces.index') }}" class="btn btn-secondary">Retour à la liste</a>

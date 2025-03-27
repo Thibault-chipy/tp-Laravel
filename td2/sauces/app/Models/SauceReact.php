@@ -9,7 +9,10 @@ class SauceReact extends Model
 {
     use HasFactory;
     protected $table = 'sauce_reacts';
-    protected $incrementing = false;
+    public $incrementing = false;
+    protected $primaryKey = ['userId', 'sauceId'];
+    protected $keyType = 'string';
+
     public $timestamps = false;
     protected $fillable = ['idUser', 'sauceId', 'reaction'];
 

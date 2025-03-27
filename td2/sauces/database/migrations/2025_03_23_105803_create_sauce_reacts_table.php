@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sauce_reacts', function (Blueprint $table) {
-            $table->bigIncrements('idUser');
+            $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('sauceId');
-            $table->primary(['idUser', 'sauceId']);
-
-            $table->foreign('idUser')->references('idUser')->on('users');
-            $table->foreign('sauceId')->references('idSauce')->on('sauces');
-
-            $table->boolean('reaction')->nullable();
+            $table->enum('reaction', ['like', 'dislike']); // Réaction Like/Dislike
+    
+            $table->foreign('idUser')->references('idUser')->on('users')->onDelete('cascade');
+            $table->foreign('sauceId')->references('idSauce')->on('sauces')->onDelete('cascade');
+            $table->primary(['idUser', 'sauceId']); 
         });
     }
+    
 
     /**
      * Reverse the migrations.
